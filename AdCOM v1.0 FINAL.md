@@ -2543,7 +2543,7 @@ This object allows lists of restrictions on ad responses to be specified includi
   </tr>
 </table>
 
-### Object:  Seat <a name="object_seats"></a>
+### Object:  Seat <a name="object_seat"></a>
 
 This object describes a a seat, typically representing a given customer/business entity that uses a DSP.
 
