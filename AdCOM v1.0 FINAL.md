@@ -71,6 +71,7 @@ OpenRTB Specification the IAB Tech Lab is licensed under a Creative Commons Attr
     - [Object:  Segment](#object_segment)
     - [Object:  Regs](#object_regs)
     - [Object:  Restrictions](#object_restrictions)
+    - [Object:  Seat](#object_seat)
   - [Enumerations](#enumerations)
     - [List:  API Frameworks](#list_apiframeworks)
     - [List:  Audit Status Codes](#list_auditstatuscodes)
@@ -811,7 +812,7 @@ Note that including both <code>adm</code> and <code>curl</code> is not recommend
 
 ### Object:  Audit <a name="object_audit"></a>
 
-This objects represents the outcome of some form of review of the ad.  This is typical, for example, when scanning for malware or otherwise performing ad quality reviews.
+This objects represents the outcome of some form of review of the ad or seat.  This is typical, for example, when scanning for malware or otherwise performing ad quality reviews.
 
 <table>
   <tr>
@@ -842,7 +843,7 @@ This objects represents the outcome of some form of review of the ad.  This is t
   <tr>
     <td><code>corr</code></td>
     <td>object</td>
-    <td>Correction object wherein the auditor can specify changes to attributes of the <code>Ad</code> object or its children they believe to be proper.  For example, if the original <code>Ad</code> indicated a category of “IAB3”, but the auditor deems the correct category to be “IAB13”, then <code>corr</code> could include a sparse <code>Ad</code> object including just the <code>cat</code> array indicating “IAB13”.</td>
+    <td>Correction object wherein the auditor can specify changes to attributes of the <code>Ad</code> or <code>Seat</code> object or its children they believe to be proper.  For example, if the original <code>Seat</code> indicated a category of “IAB3”, but the auditor deems the correct category to be “IAB13”, then <code>corr</code> could include a sparse <code>Ad</code> object including just the <code>cat</code> array indicating “IAB13”.</td>
   </tr>
   <tr>
     <td><code>ext</code></td>
@@ -850,6 +851,7 @@ This objects represents the outcome of some form of review of the ad.  This is t
     <td>Optional vendor-specific extensions.</td>
   </tr>
 </table>
+
 
 
 ## Placement Objects <a name="placementobjects"></a>
@@ -2533,6 +2535,38 @@ This object allows lists of restrictions on ad responses to be specified includi
     <td><code>battr</code></td>
     <td>integer&nbsp;array</td>
     <td>Block list of creative attributes.  Refer to <a href="#list_creativeattributes">List: Creative Attributes</a>.</td>
+  </tr>
+  <tr>
+    <td><code>ext</code></td>
+    <td>object</td>
+    <td>Optional vendor-specific extensions.</td>
+  </tr>
+</table>
+
+### Object:  Seat <a name="object_seats"></a>
+
+This object describes a a seat, typically representing a given customer/business entity that uses a DSP.
+
+<table>
+  <tr>
+    <td><strong>Attribute&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></td>
+    <td><strong>Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></td>
+    <td><strong>Definition</strong></td>
+  </tr>
+  <tr>
+    <td><code>id</code></td>
+    <td>string</td>
+    <td>Identifier for the seat.</td>
+  </tr>
+  <tr>
+    <td><code>name</code></td>
+    <td>string</td>
+    <td>Name of the business entity represented by the ID, e.g. "Acme Agency".</td>
+  </tr>
+  <tr>
+    <td><code>domain</code></td>
+    <td>string</td>
+    <td>Domain which best represents the named entity, e.g. "acmeagency.com".</td>
   </tr>
   <tr>
     <td><code>ext</code></td>
