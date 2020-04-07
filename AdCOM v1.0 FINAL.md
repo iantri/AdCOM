@@ -2569,6 +2569,16 @@ This object describes a a seat, typically representing a given customer/business
     <td>Domain which best represents the named entity, e.g. "acmeagency.com".</td>
   </tr>
   <tr>
+    <td><code>init</code></td>
+    <td>integer</td>
+    <td>Timestamp of the original instantiation of this seat (i.e., this object or any of its children) in Unix format (i.e., milliseconds since the epoch).</td>
+  </tr>
+  <tr>
+    <td><code>lastmod</code></td>
+    <td>integer</td>
+    <td>Timestamp of most recent modification to this seat (i.e., this object or any of its children other than the <code>Audit</code> object) in Unix format (i.e., milliseconds since the epoch).</td>
+  </tr>
+  <tr>
     <td><code>ext</code></td>
     <td>object</td>
     <td>Optional vendor-specific extensions.</td>
