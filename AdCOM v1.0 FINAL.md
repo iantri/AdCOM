@@ -2579,6 +2579,11 @@ This object describes a a seat, typically representing a given customer/business
     <td>Timestamp of most recent modification to this seat (i.e., this object or any of its children other than the <code>Audit</code> object) in Unix format (i.e., milliseconds since the epoch).</td>
   </tr>
   <tr>
+    <td><code>audit</code></td>
+    <td>object</td>
+    <td>An object depicting the audit status of the seat; typically part of a quality/safety review process.  Refer to <a href="#object_audit">Object: Audit</a>.</td>
+  </tr>
+  <tr>
     <td><code>ext</code></td>
     <td>object</td>
     <td>Optional vendor-specific extensions.</td>
